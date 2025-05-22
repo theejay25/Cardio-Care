@@ -1,10 +1,17 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import LandingPage from "./pages/LandingPage"
+
 
 function App() {
   
 
   return (
     <>
-      <div className="text-4xl capitalize">app</div>
+      <BrowserRouter >
+        <Routes>
+          <Route element={<LandingPage />} path={'/'} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
