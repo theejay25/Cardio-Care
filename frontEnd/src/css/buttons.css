@@ -1,0 +1,5 @@
+@layer {
+    .hero-search-button {
+        @apply bg-blue-600 text-white p-1.5 cursor-pointer rounded-md w-16 absolute mt-3 ml-[-16vw] lg:p-2 lg:mt-2 lg:ml-[-5vw] z-0 sm:ml-[-10%]
+     }
+}
