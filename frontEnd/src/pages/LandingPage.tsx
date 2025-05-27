@@ -1,19 +1,29 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import Logo from '../assets/img/logo.png'
-import Doctor from '../assets/img/DoctorPic1.png'
+
+//icon imports
 import { BsMenuButtonWide } from "react-icons/bs";
 import { FaRegHeart, FaRegWindowClose } from "react-icons/fa";
 import { FaHeartbeat } from "react-icons/fa";
-import FloatInfo from "../components/FloatInfo";
 import { FaChild, FaPersonPregnant } from "react-icons/fa6";
 import { GiHealthNormal, GiHeartBeats } from "react-icons/gi";
+import { MdElderly, MdLocalHospital, MdSelfImprovement } from "react-icons/md";
+
+// component import
+import FloatInfo from "../components/FloatInfo";
+import SolutionsCard from "../components/SolutionsCard";
+import SpecialistCard from "../components/SpecialistCard";
+
+// image imports
 import MedWriteUp from '../assets/img/med write up image1.jpeg'
 import MedWriteUp2 from '../assets/img/med write up image2.jpeg'
-import SolutionsCard from "../components/SolutionsCard";
-import { MdElderly, MdLocalHospital, MdSelfImprovement } from "react-icons/md";
+import Doctor from '../assets/img/DoctorPic1.png'
 import WeDo from '../assets/img/we do bg2.jpeg'
-// import { CiSearch } from "react-icons/ci";
+import Logo from '../assets/img/logo.png'
+import makine from '../assets/img/makine.png'
+import arisu from '../assets/img/arisu.png'
+import deng from '../assets/img/deng.png'
+import chisato from '../assets/img/chisato.png'
 
 function LandingPage() {
 
@@ -205,7 +215,7 @@ function LandingPage() {
 
         {/*What we do*/}
 
-        <div className="p-5 lg:inline-flex">
+        <div className="p-5 lg:inline-flex mb-5">
 
         <div className="mb-5 lg:mt-25 p-1">
 
@@ -230,6 +240,39 @@ function LandingPage() {
 
         </div>
 
+        {/* Team Section */}
+
+      <div className="bg-[#e2fafb]">
+        
+        <div className="flex flex-col items-center">
+          <h2 className="text-center text-blue-500 font-semibold text-lg mb-4">Our Team</h2>
+          <h2 className="text-center text-black font-semibold text-xl mb-4">Meet Our Team of Specialists</h2>
+
+          <p className="text-center text-gray-700 lg:w-[750px]">
+            Our team of board-certified cardiologists, surgeons, 
+            and healthcare professionals brings decades of combined experience to deliver exceptional cardiac care. 
+            We work collaboratively to ensure you receive the most advanced, personalized treatment—because your heart deserves 
+            the best.
+          </p>
+        </div>
+
+        <div className="mt-5 p-1 grid grid-cols-2 gap-2 lg:grid-cols-4 lg:ml-11">
+          <SpecialistCard name="Doctor Chisato" title="Pediatrician">
+            <img src={chisato} alt="Chill"  className="mb-4 h-45 lg:h-50 w-full bg-gray-400"/>          
+          </SpecialistCard>
+          <SpecialistCard name="Doctor Arisu" title="Cardiographer">
+            <img src={arisu} alt="Chill"  className="mb-4 h-45 lg:h-50 w-full bg-gray-400"/>          
+          </SpecialistCard>
+          <SpecialistCard name="Doctor Deng" title="Cardio surgeon">
+            <img src={deng} alt="Chill"  className="mb-4 h-45 lg:h-50 w-full bg-gray-400"/>          
+          </SpecialistCard>
+          <SpecialistCard name="Doctor Makine" title="Consultant">
+            <img src={makine} alt="Chill"  className="mb-4 h-45 lg:h-50 w-full bg-gray-400"/>          
+          </SpecialistCard>
+        </div>
+          
+     
+      </div>
 
 
     </div>
