@@ -24,6 +24,7 @@ import makine from '../assets/img/makine.png'
 import arisu from '../assets/img/arisu.png'
 import deng from '../assets/img/deng.png'
 import chisato from '../assets/img/chisato.png'
+import { Link } from "react-router-dom";
 
 function LandingPage() {
 
@@ -77,7 +78,7 @@ function LandingPage() {
           <li>Home</li>
           <li>About Us</li>
           <li>Services</li>
-          <li><button className="bg-blue-600 w-30 p-3 text-white">Get Started</button></li>
+          <li><Link to={'/signup'} className="bg-blue-600 w-30 p-3 text-white">Get Started</Link></li>
         </ul>
 
       </div>
@@ -144,16 +145,16 @@ function LandingPage() {
 
       {/* Medical write up */}
 
-      <div className="p-3 lg:p-8 lg:inline-flex lg:gap-17">
+      <div className="p-3 lg:p-8 lg:inline-flex lg:gap-50">
 
-        <div className="flex flex-col">
+        <div className="flex flex-col lg:mt-20 lg:ml-20">
         <h2 className="text-blue-500 text-xl mb-3">About Us</h2>
 
         <h1 className="text-2xl font-bold mb-3">
           Your Heart Deserves the Best Care
         </h1>
 
-        <p className="mb-1 lg:w-[750px]">
+        <p className="mb-1 lg:w-[650px]">
               At Cardio-care, we believe a healthy heart is the key to a longer, stronger life. Whether you're managing high blood pressure, recovering from a cardiac event, or simply prioritizing heart health,
               our expert cardiology team is here to guide you every step of the way.
               With cutting-edge diagnostics, personalized treatment plans, and compassionate care, we help you take control of 
@@ -165,9 +166,9 @@ function LandingPage() {
         <p className="mb-5">Because every beat matters.</p>
         </div>
 
-        <div className="p-5">
-          <img src={MedWriteUp2} alt="" className="size-[57%] rounded-md ml-35 z-10" />
-          <img src={MedWriteUp} alt="" className="size-[50%] rounded-md border-10 mt-[-5%] z-30 border-white" />
+        <div className="p-5 ">
+          <img src={MedWriteUp2} alt="" className="size-[57%] rounded-md ml-35 "  />
+          <img src={MedWriteUp} alt="" className="size-[50%] rounded-md mt-[-5%] " />
         </div>
 
 

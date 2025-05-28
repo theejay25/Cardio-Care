@@ -1,5 +1,6 @@
 import express from 'express'
 import cors from 'cors'
+import router from './routes/auth.js'
 
 const app = express()
 
@@ -9,6 +10,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions))
 app.use(express.json())
+app.use('/api/auth', router)
 
 app.get('/fruits', (req, res) => {
     res.status(200).json({
