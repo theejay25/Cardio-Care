@@ -29,6 +29,8 @@ function LandingPage() {
 
   const [dropDown, setDropDown] = useState(true)
 
+  const doctors = ['Select a Specialist', 'Doctor Makine', 'Doctor Arisu', 'Doctor Deng']
+
   useEffect(() => {
 
 
@@ -236,13 +238,13 @@ function LandingPage() {
 
         </div>
 
-          <img src={WeDo} alt="" className="rounded-md"/>
+          <img src={WeDo} alt="" className="rounded-md md:ml-40"/>
 
         </div>
 
         {/* Team Section */}
 
-      <div className="bg-[#e2fafb]">
+      <div className="bg-[#e2fafb] mb-4 py-4">
         
         <div className="flex flex-col items-center">
           <h2 className="text-center text-blue-500 font-semibold text-lg mb-4">Our Team</h2>
@@ -272,6 +274,167 @@ function LandingPage() {
         </div>
           
      
+      </div>
+
+      {/*contact and about*/}
+
+      <div className="p-4 lg:inline-flex lg:gap-3 mb-4">
+        <div className="lg:w-[50%]">
+
+          <h2 className="font-bold text-center text-lg mb-4">Helping Patients From Around The World</h2>
+
+          <p className="text-center mb-4">
+            At Cardio-Care, we are committed to providing exceptional healthcare 
+            to patients from all corners of the globe. Our mission is to deliver 
+            world-class medical treatment, personalized care, and compassionate 
+            support to every individual who walks through our doors, regardless of where they come from.
+          </p>
+
+          <h2 className="text-blue-500 font-semibold text-center mb-2">Why Patients Trust Us</h2>
+
+          <ul className="list-disc p-4">
+            <li className="mb-3">
+              <h2 className="font-semibold">Internationally Recognized Expertise</h2>  
+              Our team of highly skilled specialists is trained in the latest medical advancements, ensuring the best possible outcomes.
+            </li>
+            <li className="mb-3">
+              <h2 className="font-semibold">Multilingual Support</h2>
+              We break language barriers with multilingual staff and translation services, making healthcare accessible to all.
+            </li>
+            <li className="mb-3">
+              <h2 className="font-semibold">Seamless Medical Travel Assistance</h2>
+              From visa support to accommodation arrangements, we make international medical journeys smooth and stress-free.
+            </li>
+            <li className="mb-3">
+              <h2 className="font-semibold">Cutting-Edge Technology</h2>
+              Equipped with state-of-the-art facilities, we offer advanced diagnostics and treatments tailored to each patient’s needs.
+            </li>
+          </ul>
+  
+        </div>
+
+        <div className="lg:w-[50%] lg:mt-15">
+
+          <h2 className="font-semibold text-center mb-5">Book An Appointment</h2>
+
+          <div className="mr-5">
+            <form action="" className="grid grid-cols-2 gap-4">
+              <div className="w-46 sm:w-86 xl:w-82 lg:w-58">
+                <label htmlFor="name" className="font-semibold block mb-1">Patient Name</label>
+                <input 
+                  type="text" 
+                  name="name" 
+                  id="" 
+                  className="bg-[#fcf9f9] w-full p-3 rounded-md border-1 truncate"
+                  placeholder="Name"
+                  />
+              </div>
+              <div className="w-46 sm:w-86 xl:w-82 lg:w-58">
+                <label htmlFor="email" className="font-semibold block mb-1">Email</label>
+                <input 
+                  type="email" 
+                  name="email" 
+                  id="" 
+                  className="bg-[#fcf9f9] w-full p-3 rounded-md border-1 truncate"
+                  placeholder="Email"
+                  />
+              </div>
+              <div className="w-46 sm:w-86 xl:w-82 lg:w-58">
+                <label htmlFor="Phone Number" className="font-semibold block mb-1">Phone Number</label>
+                <input 
+                  type="email" 
+                  name="Phone Number" 
+                  id="" 
+                  className="bg-[#fcf9f9] w-full p-3 rounded-md border-1 truncate"
+                  placeholder="Phone"
+                  />
+              </div>
+              <div className="w-46 sm:w-86 xl:w-82 lg:w-58">
+                <label htmlFor="Date" className="font-semibold block mb-1">Date</label>
+                <input 
+                  type="date" 
+                  name="Date" 
+                  id="" 
+                  className="bg-[#fcf9f9] w-full p-3 rounded-md border-1 truncate"
+                  />
+              </div>
+            
+              <div className="col-span-2">
+                <label htmlFor="Doctor" className="font-semibold mb-2">Select a Specialist</label>
+                <select name="Doctor" id="" className="w-full h-10 text-center bg-[#fcf9f9] border-1 rounded-md">
+                  {doctors.map( (doctor, i ) => (
+                    <option key={i} value={doctor} className="text-center">{doctor}</option>
+                  ))}                  
+                </select>
+              </div>
+
+              <div className="col-span-2">
+                <label htmlFor="Text-area" className="block font-semibold mb-1">More Information</label>
+                <textarea
+                  name="Text-area"
+                  id=""
+                  placeholder="Input your bio..."
+                  className="bg-[#fcf9f9] p-3 w-full border-1"
+                />
+              </div>
+
+              <input 
+                type="submit" 
+                value="Submit"
+                className="col-span-2 bg-blue-500 text-white p-3 cursor-pointer text-xl hover:bg-blue-700 duration-100"
+               />
+              
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+
+      {/* footer */}
+
+      <div className="bg-[#7dd7ec] p-5">
+
+        <div className="mb-4">
+          <h2 className="font-bold text-center text-lg mb-2">Compassionate Care for Your Heart, Close to Home</h2>
+
+          <p className="text-center">
+            At Cardio-Care, we are dedicated to providing exceptional cardiac care with expertise, innovation, and compassion. 
+            Whether you need preventive screenings, advanced treatments, or personalized rehabilitation, 
+            our team is here to support your heart health journey.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4 lg:gap-12 lg:ml-10">
+
+        <ul className="text-center lg:text-left lg:w-fit lg:ml-24">
+          <h2 className="font-bold text-center mb-2 lg:text-left">Contact Us</h2>
+          <li className="mb-2">📍 [Clinic/Hospital Address]</li>
+          <li className="mb-2">📞 [Phone Number]</li>
+          <li className="mb-2">✉ [Email Address]</li>
+          <li className="mb-5">🕒 [Operating Hours]</li>
+        </ul>
+        <ul className="text-center lg:text-left lg:w-fit">
+          <h2 className="font-bold text-center mb-2 lg:text-left ">Emergency & Support</h2>
+          <li className="mb-2">🩺 24/7 Cardiac Helpline: +1 234-568</li>
+          <li className="mb-2">🚑 Urgent Appointments: Same-day for urgent cases</li>
+          <li className="mb-5">💙 Support Groups: Join our heart health community</li>
+        </ul>
+        <ul className="text-center lg:text-left lg:w-fit">
+          <h2 className="font-bold text-center mb-2 lg:text-left">Resources & Education</h2>
+          <li className="mb-2">📖 Heart Health Guides – Free downloadable eBooks</li>
+          <li className="mb-2">🎥 Patient Webinars – Live Q&As with cardiologist</li>
+          <li className="mb-5">❤️ Recovery Tips – Nutrition, exercise, and stress management</li>
+        </ul>
+        <ul className="text-center lg:text-left lg:w-fit">
+          <h2 className="font-bold text-center mb-2 lg:text-left">Visit or Connect</h2>
+          <li className="mb-2">🏥 Location: [Address] – [Map Link]</li>
+          <li className="mb-2">📧 Email: [Contact@HeartCare.com]</li>
+          <li className="mb-2">📱 Follow Us: [FB/IG/Twitter Icons]</li>
+        </ul>
+
+        </div>
+
       </div>
 
 
