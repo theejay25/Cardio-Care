@@ -10,4 +10,8 @@
     .icons-div {
         @apply bg-blue-100 size-17 p-3 text-blue-500 mb-3
     }
+
+    .side-bar-div {
+        @apply bg-blue-300 border-r-2 min-h-screen duration-150
+    }
 }

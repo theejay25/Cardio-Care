@@ -9,6 +9,9 @@ interface props{
 
 
 function FloatInfo({children, classname, title, subTitle} : props) {
+  
+  //my name
+
   return (
     <>
      <div className={classname}>

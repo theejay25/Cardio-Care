@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import LandingPage from "./pages/LandingPage"
 import Signup from "./pages/Signup"
+import AdminDashboard from "./pages/AdminDashboard"
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route element={<LandingPage />} path={'/'} />
           <Route element={<Signup />} path={'/signup'} />
+          <Route element={<AdminDashboard />} path={'/admin/dashboard'} />
         </Routes>
       </BrowserRouter>
     </>

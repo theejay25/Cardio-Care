@@ -1,15 +1,14 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose'
 
-const mongooseConnect = async () => {
-    
+const usersBase = async () => {
     try {
-        await mongoose.connect('mongodb://0.0.0.0:27017/Cardio-users')
+
+        await mongoose.connect('mongodb://localhost:27017/Cardio-care-users')
         console.log('connected')
-
+        
     } catch (error) {
-        console.log('erro connecting', error)
+        console.error(error)
     }
-
 }
 
-export default mongooseConnect
+export default usersBase;
