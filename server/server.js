@@ -1,6 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import router from './routes/auth.js'
+import usersBase from './db/userDatabase.js'
 
 const app = express()
 
@@ -19,5 +20,6 @@ app.get('/fruits', (req, res) => {
 })
 
 app.listen(8080, () => {
+    usersBase()
     console.log('A GREAT GOD!!!!!!!')
 })

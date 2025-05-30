@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useState } from "react"
+import { Link } from "react-router-dom"
 // import { useNavigate } from "react-router-dom"
 
 function Signup() {
@@ -16,13 +17,16 @@ function Signup() {
         console.log(name, email, password)
 
         try {
-            const post = await axios.post('http://localhost:8080/api/auth/register')
+            const post = await axios.post('http://localhost:8080/api/auth/register', 
+                {name, email, password}
+            )
 
             if(post.data.success) {
+                console.log(post.data)
             }
     
         } catch (error) {
-            console.error(error)
+            console.error('error message')
         }
 
     }
@@ -52,7 +56,7 @@ function Signup() {
                             type="email" 
                             name="email" 
                             id="email" 
-                            onChange={(e) => setEmail(e.target.value)}
+                            onChange={(e) => setEmail(e.target.value.toLowerCase())}
                             placeholder="Email"
                             className="p-3 bg-[#e9eff1] w-full rounded-md outline-none mb-4"
                             autoComplete="new-email"
@@ -82,7 +86,7 @@ function Signup() {
 
                     <button className="bg-blue-500 text-white w-full p-4 mb-4 cursor-pointer">Sign up</button>
 
-                    <p className="text-center">Already have an account? Sign In</p>
+                    <p className="text-center">Already have an account? <Link to={'/login'}>Sign In</Link></p>
                 </form>
             </div>
         </div>

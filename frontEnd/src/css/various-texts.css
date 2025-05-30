@@ -1,5 +1,5 @@
 @layer {
     .side-texts {
-        @apply inline-flex mt-10 p-4 items-center gap-4 text-2xl cursor-pointer duration-100 w-full text-center hover:bg-[rgba(0,0,0,.4)]
+        @apply inline-flex mt-10 p-4 items-center gap-2 text-lg cursor-pointer duration-100 w-full text-center hover:bg-[rgba(0,0,0,.4)]
     }
 }
