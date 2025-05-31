@@ -1,9 +1,11 @@
 import mongoose from 'mongoose'
+import dotenv from 'dotenv'
+dotenv.config()
 
 const usersBase = async () => {
     try {
 
-        await mongoose.connect('mongodb+srv://Jude:102008@cluster0.fqm0tsd.mongodb.net/Cardio-users?retryWrites=true&w=majority&appName=Cluster0')
+        await mongoose.connect(process.env.DB)
         console.log('connected')
         
     } catch (error) {
