@@ -1,15 +1,16 @@
 import axios from "axios"
 import { useState } from "react"
+import { BiX } from "react-icons/bi"
 import { Link } from "react-router-dom"
-// import { useNavigate } from "react-router-dom"
 
 function Signup() {
 
-    // const navigate = useNavigate()
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+
+    const [ver, setVer] = useState(false)
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
@@ -22,7 +23,7 @@ function Signup() {
             )
 
             if(post.data.success) {
-                console.log(post.data)
+                setVer(true)
             }
     
         } catch (error) {
@@ -78,11 +79,21 @@ function Signup() {
                     </div>
                     <div>
                         <label htmlFor="selection" className="font-semibold block mb-1">Role</label>
-                        <select name="selection" id="selection" className="p-3 mb-5 w-full bg-[#e9eff1]">
+                        <select name="selection" id="selection" className="p-3 mb-3 w-full bg-[#e9eff1]">
                             <option value="doctor">Doctor</option>
                             <option value="doctor">User</option>
                         </select>
                     </div>
+
+                    {ver ? (
+                        <p 
+                            className="w-full justify-center text-white p-5 bg-green-400 mb-5 inline-flex items-center gap-2">
+                            Verification sent to Email 
+                            <BiX 
+                            onClick={() => setVer(false)}
+                            className="size-8 cursor-pointer"/>
+                            </p>
+                    ): ''}
 
                     <button className="bg-blue-500 text-white w-full p-4 mb-4 cursor-pointer">Sign up</button>
 

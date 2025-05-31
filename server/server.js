@@ -20,6 +20,6 @@ app.get('/fruits', (req, res) => {
 })
 
 app.listen(8080, () => {
-    usersBase()
     console.log('A GREAT GOD!!!!!!!')
+    usersBase()
 })

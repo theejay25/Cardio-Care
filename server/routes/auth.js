@@ -34,34 +34,35 @@ router.post('/register', async (req, res) => {
 })
 
 router.post('/login', async (req, res) => {
+
    try {
      const {email, password} = req.body
+ 
+     const sameEmail = await Users.findOne({email})
 
-     const sameUser = await Users.findOne({email})
-
-     if(!sameUser) {
-        return res.status(401).json({success: false, message:'User doesnt exist'})
+     if(!sameEmail) {
+         return res.status(401).json({success: false, message:'Wrong email'})
      }
-    
-     const samePassword = await bcrypt.compare(password, sameUser.password)
-    
+     
+     const samePassword = await bcrypt.compare(password, sameEmail.password)
+     
      if(!samePassword) {
-         return res.status(401).json({success: false, message:'wrong password'})
+         return res.status(401).json({success: false, message:'Wrong password'})
      }
 
-     const token = jwt.sign(
-        {email, user_id: sameUser._id}, 
-        process.env.VITE_SECRET_USER_KEY || 'fallback_key1275639', 
-        {expiresIn:'2h'} 
-    )
+     const token = jwt.sign({email, userID: sameEmail._id}, process.env.SECRET_USER_KEY || 'FallbaCk_kEy22y2', {expiresIn: '2h'})
 
-     return res.status(200).json({success: true, message:'Login successful', token, user:{name: sameUser.name}})
+     return res.status(200).json({success: true, message:'Successfully logged in', token, user:{name: sameEmail.name}})
+    } catch (error) {
+        
+        return res.status(500).json({success: false, message:'Unsuccessful login'})
 
-   } catch (error) {
-        res.status(500).json({success: false, message:'login errors', error: error.message})
    }
 
+
 })
+
+
 
 router.get('/get', (req,res) => {
     res.json({

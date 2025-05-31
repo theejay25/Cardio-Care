@@ -7,7 +7,10 @@ function Signin() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (e: any) => {
+
+        e.preventDefault()
+
         try {
             
             const post: any = await axios.post('http://localhost:8080/api/auth/login', 
@@ -58,7 +61,7 @@ function Signin() {
                     </div>
                              <button className="bg-blue-500 text-white w-full p-4 mb-4 cursor-pointer">Sign in</button>
 
-                    <p className="text-center">Already have an account? <Link to={'/login'}>Sign Up</Link></p>
+                    <p className="text-center">Already have an account? <Link to={'/signup'}>Sign Up</Link></p>
                 </form>
             </div>
         </div>
