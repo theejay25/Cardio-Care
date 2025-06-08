@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom";
 
 //icon imports
 import { BsMenuButtonWide } from "react-icons/bs";
@@ -15,16 +16,15 @@ import SolutionsCard from "../components/SolutionsCard";
 import SpecialistCard from "../components/SpecialistCard";
 
 // image imports
-import MedWriteUp from '../assets/img/med write up image1.jpeg'
-import MedWriteUp2 from '../assets/img/med write up image2.jpeg'
-import Doctor from '../assets/img/DoctorPic1.png'
-import WeDo from '../assets/img/we do bg2.jpeg'
-import Logo from '../assets/img/logo.png'
-import makine from '../assets/img/makine.png'
-import arisu from '../assets/img/arisu.png'
-import deng from '../assets/img/deng.png'
-import chisato from '../assets/img/chisato.png'
-import { Link } from "react-router-dom";
+import MedWriteUp from '../assets/img/landingpics/med write up image1.jpeg'
+import MedWriteUp2 from '../assets/img/landingpics/med write up image2.jpeg'
+import Doctor from '../assets/img/landingpics/DoctorPic1.png'
+import WeDo from '../assets/img/landingpics/we do bg2.jpeg'
+import Logo from '../assets/img/landingpics/logo.png'
+import makine from '../assets/img/landingpics/makine.png'
+import arisu from '../assets/img/landingpics/arisu.png'
+import deng from '../assets/img/landingpics/deng.png'
+import chisato from '../assets/img/landingpics/chisato.png'
 
 function LandingPage() {
 

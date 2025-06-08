@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import signin from '../assets/img/authpics/img/login.png'
 
 function Signin() {
 
@@ -30,8 +31,11 @@ function Signin() {
   return (
     <>
         <div className="flex bg-[#f8f5f5] justify-center items-center min-h-screen">
-            <div className="p-5 w-80 bg-white">
-                <h2 className="font-bold text-xl mb-5">Signin</h2>
+            <div className="p-5 w-100 bg-white flex flex-col justify-center items-center lg:flex-row lg:gap-6 lg:w-fit">
+                <div>
+                    <h2 className="font-bold text-xl mb-5">Signin</h2>
+                    <img src={signin} alt="" />
+                </div>
                 <form action="" className="w-full" onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor="email" className="font-semibold mb-1">Email</label>

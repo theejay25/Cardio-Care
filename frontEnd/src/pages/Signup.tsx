@@ -2,6 +2,7 @@ import axios from "axios"
 import { useState } from "react"
 import { BiX } from "react-icons/bi"
 import { Link } from "react-router-dom"
+import signup from '../assets/img/authpics/img/signup.png'
 
 function Signup() {
 
@@ -15,7 +16,6 @@ function Signup() {
     const handleSubmit = async (e: any) => {
         e.preventDefault();
 
-        console.log(name, email, password)
 
         try {
             const post = await axios.post('http://localhost:8080/api/auth/register', 
@@ -35,8 +35,11 @@ function Signup() {
   return (
     <>
         <div className="min-h-screen flex justify-center items-center bg-[#f8f5f5]">
-            <div className="p-5 bg-white w-80">
-                <h2 className="capitalize font-bold text-xl mb-5">signin</h2>                    
+            <div className="p-5 bg-white flex flex-col items-center justify-center lg:flex-row lg:gap-6 lg:w-fit">
+                <div className="">
+                    <h2 className="capitalize font-bold text-xl mb-5">signin</h2>                    
+                    <img src={signup} alt="" />
+                </div>
                 <form action="" autoComplete="off" onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor="name" className="font-semibold mb-1">Username</label>
